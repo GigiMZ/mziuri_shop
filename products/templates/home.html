@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <form class="row g-3">
+  <div class="col-md-3">
+    <label for="inputEmail4" class="form-label">Product name</label>
+    <input type="email" class="form-control" id="inputEmail4" name="product_name">
+  </div>
+  <div class="col-md-3">
+    <label for="min_price" class="form-label">Min Price</label>
+    <input type="text" class="form-control" id="min_price">
+  </div>
+  <div class="col-md-3">
+    <label for="max_price" class="form-label">Max Price</label>
+    <input type="text" class="form-control" id="max_price">
+  </div>
+  <div class="col-md-6">
+    <label for="category" class="form-label">Category</label>
+    <select id="category" name="category" class="form-select">
+      <option disabled selected>Choose...</option>
+      <option selected>Clothes</option>
+      <option selected>Electronics</option>
+      <option selected>Food</option>
+    </select>
+  </div>
+  <div class="col-6">
+    <label for="inputAddress2" class="form-label">Address</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+    {% endblock %}
