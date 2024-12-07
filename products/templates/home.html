@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-    {% block content %}
-        <form class="row g-3">
+{% block content %}
+<form class="row g-3">
   <div class="col-md-3">
     <label for="inputEmail4" class="form-label">Product name</label>
     <input type="email" class="form-control" id="inputEmail4" name="product_name">
@@ -30,4 +30,34 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </div>
 </form>
-    {% endblock %}
+
+<div class="row row-cols-4 mt-5">
+  {% for product in products %}
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="https://cdn-icons-png.flaticon.com/512/7274/7274757.png" class="card-img-top" alt="package">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <a href="#" class="btn btn-primary">View</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="mt-5">
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+  </div>
+{% endblock %}
