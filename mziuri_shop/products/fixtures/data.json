@@ -1,0 +1,146 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Product 1",
+      "description": "This is the first product. It offers great features.",
+      "price": 29.99,
+      "create_date": "2024-12-01T10:00:00Z",
+      "write_time": "2024-12-01T10:30:00Z",
+      "views": 120
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Product 2",
+      "description": "This is the second product. High quality and reliable.",
+      "price": 49.99,
+      "create_date": "2024-12-02T11:00:00Z",
+      "write_time": "2024-12-02T12:00:00Z",
+      "views": 250
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Product 3",
+      "description": "The third product in our line, known for its durability.",
+      "price": 89.99,
+      "create_date": "2024-12-03T09:15:00Z",
+      "write_time": "2024-12-03T09:45:00Z",
+      "views": 75
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Product 4",
+      "description": "A premium product with advanced features.",
+      "price": 199.99,
+      "create_date": "2024-12-04T14:00:00Z",
+      "write_time": "2024-12-04T14:30:00Z",
+      "views": 350
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Product 5",
+      "description": "An eco-friendly option, designed to reduce waste.",
+      "price": 39.99,
+      "create_date": "2024-12-05T08:30:00Z",
+      "write_time": "2024-12-05T09:00:00Z",
+      "views": 180
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Product 6",
+      "description": "A sleek, modern design with excellent performance.",
+      "price": 129.99,
+      "create_date": "2024-12-06T10:45:00Z",
+      "write_time": "2024-12-06T11:15:00Z",
+      "views": 200
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Product 7",
+      "description": "A luxury item with top-of-the-line features.",
+      "price": 299.99,
+      "create_date": "2024-12-07T16:00:00Z",
+      "write_time": "2024-12-07T16:30:00Z",
+      "views": 450
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Product 8",
+      "description": "A stylish accessory designed for everyday use.",
+      "price": 59.99,
+      "create_date": "2024-12-08T13:00:00Z",
+      "write_time": "2024-12-08T13:30:00Z",
+      "views": 320
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Product 9",
+      "description": "A smart gadget with cutting-edge technology.",
+      "price": 159.99,
+      "create_date": "2024-12-09T11:00:00Z",
+      "write_time": "2024-12-09T11:30:00Z",
+      "views": 540
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Product 10",
+      "description": "A high-performance tool for professional use.",
+      "price": 249.99,
+      "create_date": "2024-12-10T14:15:00Z",
+      "write_time": "2024-12-10T14:45:00Z",
+      "views": 400
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "name": "Product 11",
+      "description": "A compact and portable solution for your needs.",
+      "price": 79.99,
+      "create_date": "2024-12-11T17:30:00Z",
+      "write_time": "2024-12-11T18:00:00Z",
+      "views": 300
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "name": "Product 12",
+      "description": "An advanced model with improved features and performance.",
+      "price": 399.99,
+      "create_date": "2024-12-12T12:00:00Z",
+      "write_time": "2024-12-12T12:30:00Z",
+      "views": 800
+    }
+  }
+]
