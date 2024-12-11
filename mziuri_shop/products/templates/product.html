@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col col-4">
+    <img src="https://cdn-icons-png.flaticon.com/512/7274/7274757.png" class="card-img-top" alt="package">
+  </div>
+  <div class="col col-8">
+    <div class="d-flex">
+      <div>Views {{ product.views }}</div>
+      <div class="ms-4">{{ product.create_date}}</div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="fw-bold card-text">${{ product.price }}</p>
+      <p class="card-text">{{ product.description}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
