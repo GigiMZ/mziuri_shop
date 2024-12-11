@@ -7,13 +7,13 @@
   </div>
   <div class="col col-8">
     <div class="d-flex">
-      <div>100232 views</div>
-      <div class="ms-4">07/12/2024 16:12</div>
+      <div>Views {{ product.views }}</div>
+      <div class="ms-4">{{ product.create_date}}</div>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="fw-bold card-text">35$</p>
-      <p class="card-text">discription</p>
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="fw-bold card-text">${{ product.price }}</p>
+      <p class="card-text">{{ product.description}}</p>
     </div>
   </div>
 </div>
