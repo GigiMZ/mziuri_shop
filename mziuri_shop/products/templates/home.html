@@ -45,7 +45,7 @@
     {% for product in products %}
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <img src="https://cdn-icons-png.flaticon.com/512/7274/7274757.png" class="card-img-top" alt="package">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="package">
             <div class="card-body">
                 <h5 class="card-title">{{product.name}}</h5>
                 <p class="card-text fw-bold">{{ product.price }}</p>
