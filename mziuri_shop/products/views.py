@@ -1,4 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
+
+from .forms import ProductForm
 from .models import Product, Category
 
 
@@ -32,3 +35,14 @@ def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
 
     return render(request, 'product.html', {'product': product})
+
+
+def create_product(request):
+    form = ProductForm()
+    if request.method == "POST":
+        form = ProductForm(request.POST,  request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'Your product was uploaded successfully.')
+            return redirect('home')
+    return render(request, 'product_form.html', {'form':form})
