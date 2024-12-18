@@ -33,6 +33,8 @@ def home(request):
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
+    product.views += 1
+    product.save()
 
     return render(request, 'product.html', {'product': product})
 
