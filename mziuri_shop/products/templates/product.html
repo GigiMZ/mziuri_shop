@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
   <div class="col col-4">
-    <img src="https://cdn-icons-png.flaticon.com/512/7274/7274757.png" class="card-img-top" alt="package">
+    <img src="{{ product.image.url }}" class="card-img-top" alt="package">
   </div>
   <div class="col col-8">
     <div class="d-flex">
@@ -16,5 +16,10 @@
       <p class="card-text">{{ product.description}}</p>
     </div>
   </div>
+</div>
+<div>
+  <a href="{% url 'update_product' product.id %}" type="button" class="btn btn-primary btn-lg mt-5 w-25">Update</a>
+  <br>
+  <a href="{% url 'delete_product' product.id %}" type="button" class="btn btn-danger btn-lg mt-2 w-25">Delete Product</a>
 </div>
 {% endblock %}

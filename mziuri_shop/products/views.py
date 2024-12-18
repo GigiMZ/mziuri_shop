@@ -45,4 +45,27 @@ def create_product(request):
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Your product was uploaded successfully.')
             return redirect('home')
-    return render(request, 'product_form.html', {'form':form})
+        else:
+            messages.add_message(request, messages.WARNING, "Your product wasn't uploaded successfully.")
+    return render(request, 'product_form.html', {'form': form})
+
+
+def update_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, f"Product '{product.name}' was updated successfully.")
+            return redirect('home')
+        else:
+            messages.add_message(request, messages.WARNING, f"Product '{product.name}' wasn't updated successfully.")
+    return render(request, 'product_form.html', {'form': ProductForm(instance=product), 'product': product})
+
+
+def delete_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    product.delete()
+    messages.add_message(request, messages.SUCCESS, f"Product '{product.name} was deleted successfully.")
+    return redirect('home')
