@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'mziuri_app.urls'
@@ -130,3 +132,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+INTERNAL_IPS = ['127.0.0.1']
+
+
+def show_toolbar(request):
+    return True
+
+
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK": show_toolbar,
+}
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("application/javascript", ".js", True)

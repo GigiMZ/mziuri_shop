@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
 
-
 def register_view(request):
     form = UserRegisterForm()
     if request.method == "POST":

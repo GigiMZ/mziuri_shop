@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.db.models import F
 
 from .forms import ProductForm
-from .models import Product, Category
+from .models import Product, Category, CartItem, Cart
 
 
 def home(request):
@@ -71,3 +72,39 @@ def delete_product(request, pk):
     product.delete()
     messages.add_message(request, messages.SUCCESS, f"Product '{product.name} was deleted successfully.")
     return redirect('home')
+
+
+def cart_view(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    return render(request, 'cart.html',{'cart': cart})
+
+
+def add_product_to_cart(request, id):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    product = Product.objects.get(id=id)
+    cart_item, created = CartItem.objects.get_or_create(product=product, cart=cart)
+    if not created:
+        cart_item.qty += 1
+        cart_item.save()
+    messages.add_message(request, messages.SUCCESS, "Your product was added to a cart.")
+    return redirect('product_detail', pk=id)
+
+
+def remove_cart_item(request, id):
+    cart_item = get_object_or_404(CartItem, pk=id)
+    cart_item.delete()
+    messages.add_message(request, messages.SUCCESS, 'cart item has been removed.')
+    return redirect('cart_view')
+
+
+def confirm_purchase(request):
+    items = CartItem.objects.all()
+    for i in items:
+        print(i.product.id)
+        product = Product.objects.filter(id=i.product.id)
+        product.update(stock_qty=F('stock_qty') - 1)
+        if product[0].stock_qty == 0:
+            product.delete()
+        i.delete()
+    messages.add_message(request, messages.SUCCESS, 'Successfully Purchased.')
+    return redirect('cart_view')

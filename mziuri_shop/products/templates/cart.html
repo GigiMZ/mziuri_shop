@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for item in cart.cart_items.all  %}
+    <tr>
+      <td>{{item.product.name}}</td>
+      <td>{{item.qty}}</td>
+      <td>{{item.product.price}}</td>
+      <td><a href="{% url 'remove_cart_item' item.id %}" class="btn btn-danger">Remove</a></td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
+<a href="{% url 'confirm_purchase'%}" class="btn btn-success">Confirm Purchase</a>
+
+{% endblock %}

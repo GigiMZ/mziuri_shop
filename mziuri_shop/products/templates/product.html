@@ -13,9 +13,12 @@
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="fw-bold card-text">${{ product.price }}</p>
+      <p class="fw-bold">Stock quantity: {{ product.stock_qty }}</p>
       <p class="card-text">{{ product.description}}</p>
     </div>
+    <a class="btn btn-success btn-s mt-3" href="{% url 'add_product_to_cart' product.id%}"> Add To cart </a>
   </div>
+
 </div>
 <div>
   <a href="{% url 'update_product' product.id %}" type="button" class="btn btn-primary btn-lg mt-5 w-25">Update</a>
